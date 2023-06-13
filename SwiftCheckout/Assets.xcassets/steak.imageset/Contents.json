@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "packed-chicken-meat-png-11552935090hovaknlxmy-removebg-preview.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "packed-chicken-meat-png-11552935090hovaknlxmy-removebg-preview@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "packed-chicken-meat-png-11552935090hovaknlxmy-removebg-preview@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
