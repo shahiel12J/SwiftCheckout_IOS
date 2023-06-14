@@ -14,7 +14,6 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var proDes: UILabel!
     @IBOutlet weak var proName: UILabel!
-    
     @IBOutlet weak var imgBackground: UIView!
     @IBOutlet weak var SubView: UIView!
     
@@ -33,22 +32,26 @@ class DetailsVC: UIViewController {
         imgBackground.layer.cornerRadius = 25
         countLabel.text = String(UserDefaults.standard.integer(forKey: "cartCount") )
         proName.text = pName
+        //navigationItem.title = pName
+        //navigationItem.backBarButtonItem.
         proDes.text = pDescription
         proPrice.text = "R" + String(pPrice)
         imgView.image = pImage
         
     }
     
+    private func navConfig(){
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+           // barButtonSystemItem: ., target: <#T##Any?#>, action: <#T##Selector?#>
+        )
+    }
+    
     @IBAction func btnAddToCart(_ sender: Any) {
         
-        //cart incrementing
         count = UserDefaults.standard.integer(forKey: "cartCount") + 1
         countLabel.text = String(count)
         UserDefaults.standard.set(count, forKey: "cartCount")
-        //ViewAllVC().viewDidLoad()
-        //ViewAllVC().counter(count: (UserDefaults.standard.integer(forKey: "cartCount")))
         
-        //Image animation
         iconShake = CABasicAnimation(keyPath: "transform.rotation.z")
         iconShake.fromValue = -0.2
         iconShake.toValue = 0.2
