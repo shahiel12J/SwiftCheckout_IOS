@@ -726,13 +726,7 @@
             <point key="canvasLocation" x="765.64885496183206" y="-7.042253521126761"/>
         </scene>
         <!--Navigation Controller-->
-
-        <scene sceneID="4b5-9p-CD4">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TkA-me-WJf" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D6N-yg-JXf">
-
+                        
         <scene sceneID="HT5-7Q-CHl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JbD-6Y-Zhi" sceneMemberID="viewController">
