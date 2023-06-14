@@ -748,17 +748,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qgR-Ej-RGp"/>
-
-                        <segue destination="EB0-yD-KtM" kind="relationship" relationship="rootViewController" id="O6p-r7-tzX"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YIW-ow-nOU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3939.6946564885493" y="-7.042253521126761"/>
-        </scene>
-    </scenes>
-    <inferredMetricsTieBreakers>
         <segue reference="1qY-39-0gH"/>
 
     </inferredMetricsTieBreakers>
