@@ -553,10 +553,10 @@
                     <connections>
                         <outlet property="LoginBtn" destination="RC8-eI-pfp" id="Usz-LT-Jf2"/>
                         <outlet property="SignUpBtn" destination="0v6-oY-3XQ" id="Hns-Bc-tls"/>
-                        <outlet property="textField" destination="tsR-Ec-xMg" id="Jea-JG-6ff"/>
-                        <outlet property="textField2" destination="5EX-fy-YCT" id="FdO-h5-pYE"/>
-                        <outlet property="textField3" destination="cNC-Pv-H5C" id="8o8-L3-tzj"/>
-                        <outlet property="textField4" destination="22D-pr-CZ0" id="86S-Dl-T6M"/>
+                        <outlet property="confirmPassword" destination="22D-pr-CZ0" id="86S-Dl-T6M"/>
+                        <outlet property="email" destination="5EX-fy-YCT" id="FdO-h5-pYE"/>
+                        <outlet property="password1" destination="cNC-Pv-H5C" id="8o8-L3-tzj"/>
+                        <outlet property="userName1" destination="tsR-Ec-xMg" id="Jea-JG-6ff"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXh-vU-Zud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -649,8 +649,8 @@
                     <connections>
                         <outlet property="LoginBtn" destination="1nD-NV-quq" id="GGq-eP-hPw"/>
                         <outlet property="SignUp" destination="Hds-eC-dfD" id="xME-17-W1H"/>
-                        <outlet property="textField5" destination="U6h-yf-GEP" id="sZA-gJ-9Sn"/>
-                        <outlet property="textField6" destination="Rgm-N8-ooD" id="rrx-QM-eyj"/>
+                        <outlet property="password" destination="Rgm-N8-ooD" id="rrx-QM-eyj"/>
+                        <outlet property="userName" destination="U6h-yf-GEP" id="sZA-gJ-9Sn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9E-3l-mDb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
