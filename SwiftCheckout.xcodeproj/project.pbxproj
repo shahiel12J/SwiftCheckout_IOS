@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4DCCB5642A2F3194000E6F28 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCB5632A2F3194000E6F28 /* CollectionViewCell.swift */; };
+		6A7BD5712A387B850049C287 /* CollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7BD5702A387B850049C287 /* CollectionViewCell2.swift */; };
 		6A8195852A31B8190093A979 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8195842A31B8190093A979 /* DataService.swift */; };
 		6ABF0EDB2A2F347D00C014A7 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF0EDA2A2F347D00C014A7 /* Products.swift */; };
 		6ABF0EDF2A3063E700C014A7 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF0EDE2A3063E700C014A7 /* ProductsViewModel.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		4DCCB5632A2F3194000E6F28 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		6A7BD5702A387B850049C287 /* CollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell2.swift; sourceTree = "<group>"; };
 		6A8195842A31B8190093A979 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		6ABF0EDA2A2F347D00C014A7 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		6ABF0EDE2A3063E700C014A7 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				6ABF0ED92A2F345900C014A7 /* Model */,
 				6ADB4F172A2DB21700CDC2EF /* AppDelegate.swift */,
 				4DCCB5632A2F3194000E6F28 /* CollectionViewCell.swift */,
+				6A7BD5702A387B850049C287 /* CollectionViewCell2.swift */,
 				6ADB4F192A2DB21700CDC2EF /* SceneDelegate.swift */,
 				6ADB4F1B2A2DB21700CDC2EF /* ViewController.swift */,
 				CCBE51D92A2F312F0077B1A0 /* LaunchScreen.swift */,
@@ -203,6 +206,7 @@
 				6ADB4F2E2A2DDAA900CDC2EF /* ViewAllVC.swift in Sources */,
 				6ABF0EDB2A2F347D00C014A7 /* Products.swift in Sources */,
 				6ADB4F182A2DB21700CDC2EF /* AppDelegate.swift in Sources */,
+				6A7BD5712A387B850049C287 /* CollectionViewCell2.swift in Sources */,
 				6ADB4F1A2A2DB21700CDC2EF /* SceneDelegate.swift in Sources */,
 				6A8195852A31B8190093A979 /* DataService.swift in Sources */,
 			);

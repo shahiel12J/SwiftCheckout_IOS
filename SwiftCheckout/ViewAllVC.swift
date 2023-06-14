@@ -16,10 +16,9 @@ class ViewAllVC: UIViewController {
     @IBOutlet weak var catergoryView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var countLabel: UILabel!
-
-    var images : [String] = ["krush", "bread", "spinach", "steak", "chicken", "muffin", "blueberries", "orangejuice", "wors", "ginger", "peppers"]
+    @IBOutlet weak var catCollectionView: UICollectionView!
     
-    var namesDescription : [String] = ["Krush Cranberyy Juice R30.00", "Albany Brown Bread R17.50", "Baby Spinach R28.99", "Sirloin Steak R250.00", "Chicken Wings R55.00", "Muffins R30.00", "Blueberries R25.50", "Minute Maid Orange Juice R15", "Free Range Boerewors R100.00", "Ginger R30.00 per kg", "Rainbow Peppers R30.00"]
+    var categories : [[String]] = [["Bakery", "Bakery"],["Fruit & Veg", "fruit & veg"],["Poultry", "Poultry"],["Beveragers", "beveragers"],["All", "all"]]
     
     var searchImages: ProductViewModel!
     var searchName: ProductViewModel!
@@ -33,14 +32,22 @@ class ViewAllVC: UIViewController {
         
         //countLabel.text = String(UserDefaults.standard.integer(forKey: "cartCount"))
         subView.layer.cornerRadius = 25
-        catergoryView.layer.cornerRadius = 25
+        //catergoryView.layer.cornerRadius = 25
         itemView.layer.cornerRadius = 25
         tabBar.layer.cornerRadius = 25
         collectionView.layer.cornerRadius = 25
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
-        
+        //catCollectionView.layer.cornerRadius = 25
+        catCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
+                
         navigationItem.setHidesBackButton(true, animated: false)
         setup()
+        
+        if let flowLayout = catCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.scrollDirection = .horizontal
+        }
+        catCollectionView.isPagingEnabled = true
+        catCollectionView.isUserInteractionEnabled = true
         //print(data)
     }
     func setup() {
@@ -61,10 +68,10 @@ class ViewAllVC: UIViewController {
             
         }
     }
-    @IBAction func all(_ sender: Any) {
+    @IBAction func all() {
         setup()
     }
-    @IBAction func bevFilter(_ sender: Any) {
+    @IBAction func bevFilter() {
         guard let url = URL(string: "http://localhost:8081/api/products/search?categoryName=Beveragers") else {
             return
         }
@@ -82,7 +89,7 @@ class ViewAllVC: UIViewController {
         }
     }
     
-    @IBAction func vegFilter(_ sender: Any) {
+    @IBAction func vegFilter() {
         guard let url = URL(string: "http://localhost:8081/api/products/search?categoryName=Veg") else {
             return
         }
@@ -100,7 +107,7 @@ class ViewAllVC: UIViewController {
         }
     }
     
-    @IBAction func meatFilter(_ sender: Any) {
+    @IBAction func meatFilter() {
         guard let url = URL(string: "http://localhost:8081/api/products/search?categoryName=Meat") else {
             return
         }
@@ -118,7 +125,7 @@ class ViewAllVC: UIViewController {
         }
     }
     
-    @IBAction func bakeryFilter(_ sender: Any) {
+    @IBAction func bakeryFilter() {
         guard let url = URL(string: "http://localhost:8081/api/products/search?categoryName=Bakery") else {
             return
         }
@@ -139,18 +146,39 @@ class ViewAllVC: UIViewController {
 }
 
 extension ViewAllVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if (collectionView == catCollectionView){
+         return 1
+        }
         return proVM == nil ? 0 : self.proVM.numberOfSections
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (collectionView == catCollectionView){
+           return 5
+        }
+        
         return self.proVM.numberOfRowsInSection(section)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if (collectionView == catCollectionView){
+            guard let cell2 = catCollectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as? CollectionViewCell2 else {return UICollectionViewCell()}
+            
+            cell2.backgroundColor = UIColor(red: 0.85, green: 0.93, blue: 0.78, alpha: 1.00)
+            cell2.layer.cornerRadius = 25
+            cell2.catLabel.text = categories[indexPath.row][0]
+            cell2.catImage.image = UIImage(named: String(categories[indexPath.row][1]))
+             return cell2
+        }
+
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell else {return UICollectionViewCell()}
 
+        
         let proVM = self.proVM.productsAtIndex(indexPath.row)
        
         cell.textLabel.text = proVM.name
@@ -161,20 +189,46 @@ extension ViewAllVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = (collectionView.frame.size.width-10)/2
-
+        if (collectionView == catCollectionView){
+    
+            return  CGSize(width: 110, height: 110)
+        }
         return CGSize(width: size, height: size)
     }
+    
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if(collectionView == catCollectionView){
+            print([indexPath.row][0])
+            if([indexPath.row][0] == 0){
+                return bakeryFilter()
+            }
+            if([indexPath.row][0] == 1){
+                return vegFilter()
+            }
+            if([indexPath.row][0] == 2){
+                return meatFilter()
+            }
+            if([indexPath.row][0] == 3){
+                return bevFilter()
+            }
+            if([indexPath.row][0] == 4){
+                return all()
+            }
+        }
+        
+   
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsVC") as! DetailsVC
-        
+
         let proVM = self.proVM.productsAtIndex(indexPath.row)
-        
+
         vc.pImage = UIImage(named: String(proVM.image.imageURL))!
         vc.pName = proVM.name
         vc.pDescription = proVM.description
         vc.pPrice = Int(proVM.price)
-        self.present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
     
