@@ -20,6 +20,9 @@
 		6ADB4F2C2A2DBD2F00CDC2EF /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADB4F2B2A2DBD2F00CDC2EF /* DetailsVC.swift */; };
 		6ADB4F2E2A2DDAA900CDC2EF /* ViewAllVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADB4F2D2A2DDAA900CDC2EF /* ViewAllVC.swift */; };
 		CCBE51DA2A2F312F0077B1A0 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBE51D92A2F312F0077B1A0 /* LaunchScreen.swift */; };
+		CCBE52292A3886C10077B1A0 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBE52282A3886C10077B1A0 /* SignUpVC.swift */; };
+		CCBE522B2A3886FB0077B1A0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBE522A2A3886FB0077B1A0 /* LoginVC.swift */; };
+		CCBE522D2A39F7D10077B1A0 /* SuccessModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBE522C2A39F7D10077B1A0 /* SuccessModalVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		6ADB4F2B2A2DBD2F00CDC2EF /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		6ADB4F2D2A2DDAA900CDC2EF /* ViewAllVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllVC.swift; sourceTree = "<group>"; };
 		CCBE51D92A2F312F0077B1A0 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		CCBE52282A3886C10077B1A0 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		CCBE522A2A3886FB0077B1A0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		CCBE522C2A39F7D10077B1A0 /* SuccessModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessModalVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				6ADB4F1B2A2DB21700CDC2EF /* ViewController.swift */,
 				CCBE51D92A2F312F0077B1A0 /* LaunchScreen.swift */,
 				6ADB4F1D2A2DB21700CDC2EF /* Main.storyboard */,
+				CCBE522C2A39F7D10077B1A0 /* SuccessModalVC.swift */,
+				CCBE522A2A3886FB0077B1A0 /* LoginVC.swift */,
+				CCBE52282A3886C10077B1A0 /* SignUpVC.swift */,
 				6ADB4F2B2A2DBD2F00CDC2EF /* DetailsVC.swift */,
 				6ADB4F2D2A2DDAA900CDC2EF /* ViewAllVC.swift */,
 				6ADB4F202A2DB21900CDC2EF /* Assets.xcassets */,
@@ -185,7 +194,10 @@
 			files = (
 				6ABF0EDF2A3063E700C014A7 /* ProductsViewModel.swift in Sources */,
 				6ADB4F1C2A2DB21700CDC2EF /* ViewController.swift in Sources */,
+				CCBE522B2A3886FB0077B1A0 /* LoginVC.swift in Sources */,
 				6ADB4F2C2A2DBD2F00CDC2EF /* DetailsVC.swift in Sources */,
+				CCBE522D2A39F7D10077B1A0 /* SuccessModalVC.swift in Sources */,
+				CCBE52292A3886C10077B1A0 /* SignUpVC.swift in Sources */,
 				4DCCB5642A2F3194000E6F28 /* CollectionViewCell.swift in Sources */,
 				CCBE51DA2A2F312F0077B1A0 /* LaunchScreen.swift in Sources */,
 				6ADB4F2E2A2DDAA900CDC2EF /* ViewAllVC.swift in Sources */,
