@@ -52,6 +52,7 @@ class LoginVC: UIViewController {
 //        
 //        self.dismiss(animated: true, completion: nil)
 
+
     }
     @objc func loginButtonTapped(_ sender: UIButton) {
             validateFields()
@@ -86,5 +87,12 @@ class LoginVC: UIViewController {
             // Navigate to the next screen
         }
 
+    @IBAction func linkClick2(_ sender: Any) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as? SignUpVC else {
+            return }
+        
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
