@@ -42,6 +42,9 @@ class LoginVC: UIViewController {
         password.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: password.frame.height))
         password.leftViewMode = .always
         
+        LoginBtn.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
+                
+        
 //        self.modalPresentationStyle = .fullScreen
 //        
 //        let LoginVC = LoginVC()
@@ -50,6 +53,38 @@ class LoginVC: UIViewController {
 //        self.dismiss(animated: true, completion: nil)
 
     }
+    @objc func loginButtonTapped(_ sender: UIButton) {
+            validateFields()
+        }
+    func validateFields() {
+            view.endEditing(true)
+            
+            guard let username = userName.text,
+                  let password = password.text else {
+                return
+            }
+            
+            if username.isEmpty || password.isEmpty {
+                showAlert(withTitle: "Error", message: "Please fill in all required fields.")
+            } else {
+                login(username: username, password: password)
+            }
+        }
+    func login(username: String, password: String) {
+        // Perform login logic
+        // ...
+        // If login is successful, navigate to the next screen
+        navigateToNextScreen()
+    }
+    func showAlert(withTitle title: String, message: String) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+        
+        func navigateToNextScreen() {
+            // Navigate to the next screen
+        }
 
 }
 
