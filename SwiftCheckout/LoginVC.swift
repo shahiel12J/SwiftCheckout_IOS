@@ -41,15 +41,15 @@ class LoginVC: UIViewController {
         userName.leftViewMode = .always
         password.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: password.frame.height))
         password.leftViewMode = .always
-        
-//        self.modalPresentationStyle = .fullScreen
-//        
-//        let LoginVC = LoginVC()
-//        self.present(LoginVC, animated: true, completion: nil)
-//        
-//        self.dismiss(animated: true, completion: nil)
 
     }
 
+    @IBAction func linkClick2(_ sender: Any) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as? SignUpVC else {
+            return }
+        
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 

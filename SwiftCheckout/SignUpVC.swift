@@ -64,10 +64,6 @@ class SignUpVC: UIViewController {
         
         confirmPassword.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: confirmPassword.frame.height))
         confirmPassword.leftViewMode = .always
-        
-        
-
-        
     }
     
     @IBAction func linkClick(_ sender: Any) {
@@ -89,15 +85,6 @@ extension UIColor {
     }
 }
 
-
-//func addAlert(message: String, title: String) {
-//        let alert = UIAlertController(title: title, message: message,preferredStyle: UIAlertController.Style.alert)
-//
-//        alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: { _ in
-//                //Cancel Action
-//            }))
-//            self.present(alert, animated: true, completion: nil)
-//        }
 
 
 
