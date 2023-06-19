@@ -28,4 +28,24 @@ struct webService{
             }
         }.resume()
     }
+    
+//    func getCart(url:URL, completion: @escaping (Cart) -> Void) {
+//        URLSession.shared.dataTask(with: url) { data, response, error in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                //completion(nil)
+//            }else if let data = data {
+//                //print(data)
+//                
+//                let cart = try? JSONDecoder().decode(Cart.self, from: data)
+//                
+//                if let data = cart{
+//                    //print(data)
+//                    completion(data)
+//                    
+//                }
+//              
+//            }
+//        }.resume()
+//    }
 }
