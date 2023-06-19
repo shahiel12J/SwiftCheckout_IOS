@@ -223,7 +223,7 @@ extension ViewAllVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 
         let proVM = self.proVM.productsAtIndex(indexPath.row)
 
-        vc.pImage = UIImage(named: String(proVM.image.imageURL))!
+        vc.pImage = proVM.image.imageURL
         vc.pName = proVM.name
         vc.pDescription = proVM.description
         vc.pPrice = Int(proVM.price)
