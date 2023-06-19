@@ -10,16 +10,38 @@ import UIKit
 
 struct cartViewModel {
     
-    var cart: [Any]
+    //let cart: Cart
+    
+    //var cart: [Any]
+    //let defaults = UserDefaults.standard
+    
+//    func cartArray(){
+//        defaults.set(cart, forKey: "cart")
+//    }
     
     mutating func addToCart(imageURl: String, name:String, quantity: Int){
-        let new = [imageURl, name, quantity] as [Any]
-        cart.append(new)
-        UserDefaults.standard.set(cart, forKey: "cart")
-        //print(cart)
+        let new = [imageURl, name, String(quantity)]
+        
+        if var cart = UserDefaults.standard.array(forKey: "cart")  as? [[String]] {
+  
+            cart.append(new)
+            
+          
+            UserDefaults.standard.set(cart, forKey: "cart")
+        } else {
+            
+            let newArray: [[String]] = []
+            
+            UserDefaults.standard.set(newArray, forKey: "cart")
+            
+            print(newArray)
+        }
+        
+        //cart.append(contentsOf: new)
+       // defaults.synchronize()
+        //UserDefaults.standard.set(cart, forKey: "cart")
     }
     
-    func show(){
-        print(cart)
-    }
+    
 }
+

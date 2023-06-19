@@ -29,7 +29,11 @@ class ViewAllVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //var myInstance = cartViewModel(cart: [])
+        //myInstance.cartArray()
+//        let appDomain = Bundle.main.bundleIdentifier!
+//        UserDefaults.standard.removePersistentDomain(forName: appDomain)
+//        UserDefaults.standard.synchronize()
         //countLabel.text = String(UserDefaults.standard.integer(forKey: "cartCount"))
         subView.layer.cornerRadius = 25
         //catergoryView.layer.cornerRadius = 25
