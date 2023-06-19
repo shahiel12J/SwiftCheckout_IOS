@@ -848,6 +848,7 @@
             <point key="canvasLocation" x="765.64885496183206" y="-7.042253521126761"/>
         </scene>
         <!--Navigation Controller-->
+                        
         <scene sceneID="HT5-7Q-CHl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JbD-6Y-Zhi" sceneMemberID="viewController">
@@ -867,7 +868,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qgR-Ej-RGp"/>
+        <segue reference="1qY-39-0gH"/>
+
     </inferredMetricsTieBreakers>
     <resources>
         <image name="LaunchScreenImage" width="112.33333587646484" height="90"/>
