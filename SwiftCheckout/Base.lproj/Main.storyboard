@@ -14,7 +14,7 @@
             <objects>
                 <viewController storyboardIdentifier="ViewAllVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewAllVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOP-LG-aVM">
@@ -299,9 +299,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                              
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="iIp-Ak-Mnu" secondAttribute="bottom" constant="58" id="0x5-gv-Thj"/>
                                                     <constraint firstItem="6eq-Dt-XYT" firstAttribute="leading" secondItem="COh-YJ-Uge" secondAttribute="leading" constant="69" id="50B-YO-Fm0"/>
@@ -393,9 +391,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-
                                         <constraints>
                                             <constraint firstItem="D3k-nP-poJ" firstAttribute="top" secondItem="772-fP-MYd" secondAttribute="bottom" constant="5" id="03B-vK-Dwc"/>
                                             <constraint firstItem="D3k-nP-poJ" firstAttribute="centerX" secondItem="772-fP-MYd" secondAttribute="centerX" id="2s5-Zh-mkX"/>
@@ -415,10 +411,8 @@
                                     </view>
                                 </subviews>
                             </stackView>
-
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toH-XF-X0W">
-                                <rect key="frame" x="355" y="59.000000000000007" width="10.333333333333314" height="20.333333333333336"/>
-
+                                <rect key="frame" x="344" y="59.000000000000007" width="10.333333333333314" height="20.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -460,12 +454,11 @@
             <objects>
                 <viewController id="g1e-71-eTg" customClass="CartVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L6B-JS-XXY">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFU-zp-8TJ">
-                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
-
+                                <rect key="frame" x="0.0" y="56" width="393" height="786"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IMi-hz-IJU">
                                         <rect key="frame" x="8" y="8" width="377" height="628"/>
@@ -511,7 +504,7 @@
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="trash.circle.fill" catalog="system"/>
                                                             <connections>
-                                                                <action selector="removeFromCart:" destination="g1e-71-eTg" eventType="touchUpInside" id="jTI-Ci-aVD"/>
+                                                                <action selector="deleteSelect:" destination="3Wv-AN-8J7" eventType="touchUpInside" id="67o-L5-zg2"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -547,9 +540,7 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puF-HK-XrH">
-
-                                        <rect key="frame" x="0.0" y="618" width="393" height="131"/>
-
+                                        <rect key="frame" x="0.0" y="655" width="393" height="131"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghT-aW-cGP">
                                                 <rect key="frame" x="190" y="40" width="183" height="50"/>
@@ -604,6 +595,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nba-pT-wBD"/>
+                    <connections>
+                        <outlet property="collectionView" destination="IMi-hz-IJU" id="Fhf-ev-Ow0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ht-c0-Xd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -614,7 +608,7 @@
             <objects>
                 <viewController id="lrb-Dk-hax" customClass="CheckoutVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fq4-aL-wlv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-xh-h14">
@@ -662,14 +656,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAd-kK-VeG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5759.5419847328239" y="-7.042253521126761"/>
+            <point key="canvasLocation" x="4857" y="-7"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="ZAJ-2p-hkS">
             <objects>
                 <viewController id="EB0-yD-KtM" customClass="SignUpVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gbj-xy-8Qk">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LaunchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="Ntb-DK-Za7">
@@ -777,14 +771,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXh-vU-Zud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6556" y="-7"/>
+            <point key="canvasLocation" x="5524" y="-7"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="Cfb-Ba-vxg">
             <objects>
                 <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7dr-ht-mqy" customClass="LoginVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xBP-eR-OWB">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LaunchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="d4C-JY-eaz">
@@ -878,7 +872,7 @@
             <objects>
                 <viewController title="Profile" id="VGw-hF-uUQ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1bP-wY-3R5">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wKp-VK-OF4">
@@ -961,7 +955,7 @@
             <objects>
                 <viewController title="Manage Account" id="Yt1-DJ-5EH" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sgt-mm-qdP">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCT-jJ-2GQ">
@@ -999,17 +993,17 @@
             <objects>
                 <viewController id="RPj-OK-Bkc" customClass="HelpVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CNa-uM-AyT">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rr5-SC-Cdw">
-                                <rect key="frame" x="16" y="187" width="361" height="320"/>
+                                <rect key="frame" x="16" y="140" width="361" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="8xb-P2-PdA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVV-eU-Dqm">
-                                <rect key="frame" x="30" y="515" width="333" height="209"/>
+                                <rect key="frame" x="30" y="539" width="333" height="209"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="209" id="2Fh-jr-wal"/>
                                 </constraints>
@@ -1043,7 +1037,7 @@
             <objects>
                 <viewController id="Fq8-x5-d6R" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vCQ-US-9Vg">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="lock.rotation" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wv5-5K-6cH">
@@ -1126,7 +1120,7 @@
             <objects>
                 <viewController title="Edit Profile" id="WqS-7F-hpN" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kMr-qo-2X7">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEZ-LS-CeN">
@@ -1287,6 +1281,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="RXB-SX-xe4"/>
         <segue reference="J3U-gM-gM2"/>
         <segue reference="qgR-Ej-RGp"/>
         <segue reference="vWv-nI-MHv"/>
@@ -1294,19 +1289,14 @@
     <resources>
         <image name="LaunchScreenImage" width="112.33333587646484" height="90"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
-
+        <image name="leftArrow" width="75" height="134.33332824707031"/>
         <image name="lock.rotation" catalog="system" width="128" height="112"/>
         <image name="manage account icon" width="166.66667175292969" height="166.66667175292969"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="profile" width="122" height="128"/>
-
-        <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="leftArrow" width="75" height="134.33332824707031"/>
-        <image name="profile" width="122" height="128"/>
         <image name="rightArrow" width="75" height="134.33332824707031"/>
         <image name="trash.circle.fill" catalog="system" width="128" height="123"/>
-
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
