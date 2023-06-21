@@ -15,6 +15,7 @@ class CartVC: UIViewController {
     var numItems: Int = 0
     var sum = 0
     var p:[Int] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //var myInstance = cartViewModel()
@@ -25,8 +26,12 @@ class CartVC: UIViewController {
       
     }
     
+    @IBAction func btnCheckout(_ sender: UIButton) {
+        performSegue(withIdentifier: "checkout", sender: nil)
+    }
 
 }
+
 extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

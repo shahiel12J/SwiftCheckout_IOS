@@ -14,17 +14,17 @@
             <objects>
                 <viewController storyboardIdentifier="ViewAllVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewAllVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOP-LG-aVM">
-                                <rect key="frame" x="0.0" y="198.66666666666669" width="393" height="643.33333333333326"/>
+                                <rect key="frame" x="0.0" y="198.66666666666669" width="393" height="653.33333333333326"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zg0-y0-4Jx">
-                                        <rect key="frame" x="0.0" y="146.00000000000003" width="393" height="497.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="146.00000000000003" width="393" height="507.33333333333337"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JlE-VU-Xcy">
-                                                <rect key="frame" x="10" y="10" width="363" height="403.33333333333331"/>
+                                                <rect key="frame" x="10" y="10" width="363" height="413.33333333333331"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MCk-fj-Pxk">
                                                     <size key="itemSize" width="128" height="128"/>
@@ -151,7 +151,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RM0-Xz-diE">
-                                <rect key="frame" x="0.0" y="742" width="393" height="100"/>
+                                <rect key="frame" x="0.0" y="752" width="393" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-yV-2Eo">
                                         <rect key="frame" x="83" y="59" width="49" height="21"/>
@@ -295,6 +295,7 @@
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="btnAddToCart:" destination="64o-5J-xb2" eventType="touchUpInside" id="Om3-9x-PE6"/>
+                                                            <segue destination="g1e-71-eTg" kind="show" id="db6-n4-RKr"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -453,11 +454,11 @@
             <objects>
                 <viewController id="g1e-71-eTg" customClass="CartVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L6B-JS-XXY">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFU-zp-8TJ">
-                                <rect key="frame" x="0.0" y="56" width="393" height="786"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IMi-hz-IJU">
                                         <rect key="frame" x="8" y="8" width="377" height="628"/>
@@ -485,8 +486,14 @@
                                                                 <constraint firstAttribute="width" constant="100" id="tK0-X5-YDJ"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GT-LL-Sgy">
-                                                            <rect key="frame" x="160" y="50" width="41.333333333333343" height="50"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GT-LL-Sgy">
+                                                            <rect key="frame" x="160" y="50" width="83" height="50"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqI-LE-q7J">
+                                                            <rect key="frame" x="239.66666666666666" y="50" width="92.333333333333343" height="50"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -497,21 +504,9 @@
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="trash.circle.fill" catalog="system"/>
                                                             <connections>
-                                                                <action selector="deleteSelect:" destination="3Wv-AN-8J7" eventType="touchUpInside" id="67o-L5-zg2"/>
+                                                                <action selector="removeFromCart:" destination="g1e-71-eTg" eventType="touchUpInside" id="jTI-Ci-aVD"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXd-qD-E7G">
-                                                            <rect key="frame" x="160" y="100" width="42" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqI-LE-q7J">
-                                                            <rect key="frame" x="319" y="50" width="10.333333333333314" height="50"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="SOt-0z-U6U" secondAttribute="trailing" constant="4" id="6GJ-FO-Ilo"/>
@@ -519,13 +514,12 @@
                                                         <constraint firstAttribute="bottom" secondItem="3GT-LL-Sgy" secondAttribute="bottom" constant="50" id="JEG-BL-Dv6"/>
                                                         <constraint firstItem="SOt-0z-U6U" firstAttribute="leading" secondItem="Kzd-k3-gCI" secondAttribute="trailing" constant="210" id="Kn3-q7-Qwp"/>
                                                         <constraint firstItem="dqI-LE-q7J" firstAttribute="top" secondItem="iYJ-ZZ-1jn" secondAttribute="top" constant="50" id="OPE-qO-4p1"/>
-                                                        <constraint firstAttribute="trailing" secondItem="lXd-qD-E7G" secondAttribute="trailing" constant="175" id="R9I-ui-P95"/>
-                                                        <constraint firstItem="lXd-qD-E7G" firstAttribute="top" secondItem="3GT-LL-Sgy" secondAttribute="bottom" id="SY0-Gi-lex"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dqI-LE-q7J" secondAttribute="trailing" constant="45" id="QtW-Ry-C6G"/>
                                                         <constraint firstItem="SOt-0z-U6U" firstAttribute="top" secondItem="iYJ-ZZ-1jn" secondAttribute="top" constant="4" id="ZzC-JM-AX7"/>
+                                                        <constraint firstItem="dqI-LE-q7J" firstAttribute="leading" secondItem="3GT-LL-Sgy" secondAttribute="trailing" constant="38.333333333333314" id="cD3-l0-1yI"/>
                                                         <constraint firstAttribute="bottom" secondItem="dqI-LE-q7J" secondAttribute="bottom" constant="50" id="cbY-b9-oVS"/>
                                                         <constraint firstItem="3GT-LL-Sgy" firstAttribute="top" secondItem="iYJ-ZZ-1jn" secondAttribute="top" constant="50" id="eiu-0r-o7t"/>
                                                         <constraint firstItem="dqI-LE-q7J" firstAttribute="top" secondItem="SOt-0z-U6U" secondAttribute="bottom" constant="10" id="h5z-iZ-9A0"/>
-                                                        <constraint firstItem="lXd-qD-E7G" firstAttribute="leading" secondItem="Kzd-k3-gCI" secondAttribute="trailing" constant="60" id="plS-ag-GTn"/>
                                                         <constraint firstItem="Kzd-k3-gCI" firstAttribute="leading" secondItem="iYJ-ZZ-1jn" secondAttribute="leading" id="pul-po-wCz"/>
                                                         <constraint firstAttribute="bottom" secondItem="Kzd-k3-gCI" secondAttribute="bottom" id="sxi-OE-Gte"/>
                                                         <constraint firstItem="3GT-LL-Sgy" firstAttribute="leading" secondItem="Kzd-k3-gCI" secondAttribute="trailing" constant="60" id="zGU-aa-rmn"/>
@@ -535,7 +529,6 @@
                                                 <connections>
                                                     <outlet property="proImage" destination="Kzd-k3-gCI" id="DG7-ik-v0U"/>
                                                     <outlet property="proName" destination="3GT-LL-Sgy" id="cIv-Lg-p0J"/>
-                                                    <outlet property="proPrice" destination="lXd-qD-E7G" id="SWk-i5-zYw"/>
                                                     <outlet property="proQuan" destination="dqI-LE-q7J" id="LfN-h5-EhI"/>
                                                     <outlet property="removeBtn" destination="SOt-0z-U6U" id="dHg-yP-XvL"/>
                                                 </connections>
@@ -547,7 +540,7 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puF-HK-XrH">
-                                        <rect key="frame" x="0.0" y="655" width="393" height="131"/>
+                                        <rect key="frame" x="0.0" y="618" width="393" height="131"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghT-aW-cGP">
                                                 <rect key="frame" x="190" y="40" width="183" height="50"/>
@@ -557,7 +550,6 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="btnAddToCart:" destination="64o-5J-xb2" eventType="touchUpInside" id="ZEa-GY-QMG"/>
-                                                    <segue destination="lrb-Dk-hax" kind="show" id="RXB-SX-xe4"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7g-yL-DcI">
@@ -602,10 +594,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nba-pT-wBD"/>
-                    <connections>
-                        <outlet property="collectionView" destination="IMi-hz-IJU" id="Fhf-ev-Ow0"/>
-                        <outlet property="totalPrice" destination="j7g-yL-DcI" id="aXa-0h-c57"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ht-c0-Xd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -616,7 +604,7 @@
             <objects>
                 <viewController id="lrb-Dk-hax" customClass="CheckoutVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fq4-aL-wlv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-xh-h14">
@@ -640,7 +628,6 @@
                                 <connections>
                                     <action selector="btnAddToCart:" destination="64o-5J-xb2" eventType="touchUpInside" id="29x-iM-6QW"/>
                                     <action selector="btnCheckout:" destination="lrb-Dk-hax" eventType="touchUpInside" id="OmP-Nt-8a7"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="vWv-nI-MHv"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8L-07-Dbx">
@@ -664,14 +651,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAd-kK-VeG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4857" y="-7"/>
+            <point key="canvasLocation" x="5759.5419847328239" y="-7.042253521126761"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="ZAJ-2p-hkS">
             <objects>
                 <viewController id="EB0-yD-KtM" customClass="SignUpVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gbj-xy-8Qk">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LaunchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="Ntb-DK-Za7">
@@ -779,14 +766,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXh-vU-Zud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5524" y="-7"/>
+            <point key="canvasLocation" x="6556" y="-7"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="Cfb-Ba-vxg">
             <objects>
                 <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7dr-ht-mqy" customClass="LoginVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xBP-eR-OWB">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LaunchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="d4C-JY-eaz">
@@ -880,7 +867,7 @@
             <objects>
                 <viewController title="Profile" id="VGw-hF-uUQ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1bP-wY-3R5">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wKp-VK-OF4">
@@ -963,7 +950,7 @@
             <objects>
                 <viewController title="Manage Account" id="Yt1-DJ-5EH" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sgt-mm-qdP">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCT-jJ-2GQ">
@@ -1001,17 +988,17 @@
             <objects>
                 <viewController id="RPj-OK-Bkc" customClass="HelpVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CNa-uM-AyT">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rr5-SC-Cdw">
-                                <rect key="frame" x="16" y="140" width="361" height="320"/>
+                                <rect key="frame" x="16" y="187" width="361" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="8xb-P2-PdA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVV-eU-Dqm">
-                                <rect key="frame" x="30" y="539" width="333" height="209"/>
+                                <rect key="frame" x="30" y="515" width="333" height="209"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="209" id="2Fh-jr-wal"/>
                                 </constraints>
@@ -1045,7 +1032,7 @@
             <objects>
                 <viewController id="Fq8-x5-d6R" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vCQ-US-9Vg">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="lock.rotation" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wv5-5K-6cH">
@@ -1128,7 +1115,7 @@
             <objects>
                 <viewController title="Edit Profile" id="WqS-7F-hpN" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kMr-qo-2X7">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEZ-LS-CeN">
@@ -1289,9 +1276,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RXB-SX-xe4"/>
         <segue reference="J3U-gM-gM2"/>
-        <segue reference="vWv-nI-MHv"/>
+        <segue reference="qgR-Ej-RGp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="LaunchScreenImage" width="112.33333587646484" height="90"/>
