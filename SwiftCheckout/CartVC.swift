@@ -9,20 +9,15 @@ import UIKit
 
 class CartVC: UIViewController {
 
-    var cartArray: [[String]] = []
-
+    @IBOutlet weak var collectionView: UICollectionView!
+    var cartArray: [[String]] = (UserDefaults.standard.array(forKey: "cart") as? [[String]])!
+    var numItems: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         //var myInstance = cartViewModel()
-
-        cartArray = (UserDefaults.standard.array(forKey: "cart") as? [[String]])!
-
-       // testimage.image = UIImage(named: <#T##String#>)
-        //testLabel.text = array[0]
-        //proImage.image = UIImage(named: array[0][0])
-        //let name = array[0][1]
-        //proName.text = array[0][1]
-        //proQuan.text = array[0][2]
+        //navigationItem.leftBarButtonItem = editButtonItem
+        numItems = cartArray.count
+        //cartArray = (UserDefaults.standard.array(forKey: "cart") as? [[String]])!
         print(cartArray[0][1])
       
     }
@@ -36,9 +31,30 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cartArray.count
+        
+        print(numItems)
+        return numItems
     }
-
+    
+//    func deleteUser(sender:UIButton) {
+//
+//        let i : Int = (sender.layer.value(forKey: "index")) as! Int
+//        cartArray.remove(at: i)
+//        collectionView.reloadData()
+//    }
+//
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        
+        if let indexPaths = collectionView?.indexPathsForVisibleItems{
+            for indexPath in indexPaths {
+                if let cell = collectionView?.cellForItem(at: indexPath) as? CartViewCell{
+                    cell.isEditing = editing
+                }
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CartViewCell else {return UICollectionViewCell()}
@@ -52,9 +68,9 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         cell.proImage.image = UIImage(named: cartArray[indexPath.row][0])
         cell.proName.text = cartArray[indexPath.row][1]
         cell.proQuan.text = cartArray[indexPath.row][2]
-        
-        cell.removeBtn.layer.setValue(indexPath.row, forKey: "index")
-        cell.removeBtn.addTarget(self, action: Selector("deleteUser"), for: UIControl.Event.touchUpInside)
+        cell.delegate = self
+//        cell.removeBtn.layer.setValue(indexPath.row, forKey: "index")
+//        cell.removeBtn.addTarget(self, action: Selector(("deleteUser")), for: UIControl.Event.touchUpInside)
             
             
 
@@ -64,16 +80,27 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         }
     
-    func deleteUser(sender:UIButton) {
-
-        let i : Int = (sender.layer.value(forKey: "index")) as! Int
-        cartArray.remove(at: i)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return  CGSize(width: 110, height: 110)
 
     }
 
     
+}
+
+extension CartVC: CartViewCellDelegate{
+    func delete(cell: CartViewCell) {
+        if let indexPath = collectionView?.indexPath(for: cell){
+            numItems -= 1
+            collectionView.reloadData()
+            cartArray.remove(at: indexPath.item)
+            //cartArray[indexPath.section].remove(at: indexPath.item)
+           
+            //cartArray[indexPath.section].remove(at: indexPath.item)
+            //collectionView?.deleteItems(at: [indexPath])
+
+        }
+        UserDefaults.standard.set(cartArray, forKey: "cart")
+        cartArray = (UserDefaults.standard.array(forKey: "cart") as? [[String]])!
+    }
 }
