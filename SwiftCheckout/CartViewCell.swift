@@ -20,10 +20,28 @@ class CartViewCell: UICollectionViewCell {
     @IBOutlet weak var proName: UILabel!
     @IBOutlet weak var proImage: UIImageView!
     @IBOutlet weak var proPrice: UILabel!
+    @IBOutlet weak var cartCell: UIView!
     
     weak var delegate: CartViewCellDelegate?
     var oldQuan: String = ""
     var newQuan: Int = 0
+    
+    override func awakeFromNib() {
+           super.awakeFromNib()
+           setupCellAppearance()
+       }
+       
+       private func setupCellAppearance() {
+           cartCell.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
+           //layer.cornerRadius = 8
+           layer.shadowColor = UIColor.black.cgColor
+           layer.shadowOpacity = 0.5
+           layer.shadowOffset = CGSize(width: 2, height: 4)
+           //layer.shadowRadius = 4
+           layer.masksToBounds = false
+           layer.shouldRasterize = true
+           layer.rasterizationScale = UIScreen.main.scale
+       }
     
     var select:String! {
         didSet{
