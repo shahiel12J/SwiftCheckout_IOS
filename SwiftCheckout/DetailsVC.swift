@@ -19,7 +19,8 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var quantityDec: UIButton!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var quantityInc: UIButton!
-
+    @IBOutlet weak var btnCart: UIButton!
+    
     var cart: [Any] = []
     
     var iconShake = CABasicAnimation()
@@ -29,9 +30,11 @@ class DetailsVC: UIViewController {
     var pDescription = ""
     var pPrice: Int = 0
     var pImage = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        self.navigationItem.hidesBackButton = true
         SubView.layer.cornerRadius = 25
         imgBackground.layer.cornerRadius = 25
         countLabel.text = String(UserDefaults.standard.integer(forKey: "cartCount") )
@@ -41,18 +44,22 @@ class DetailsVC: UIViewController {
         proDes.text = pDescription
         proPrice.text = "R" + String(pPrice)
         imgView.image = UIImage(named: pImage) 
-        navConfig()
+//        navConfig()
 
     }
     
-    private func navConfig(){
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
-                image: UIImage(systemName: "cart.fill"),
-                style: .done,
-                target: self,
-                action: nil
-        )
- 
+//    private func navConfig(){
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+//                image: UIImage(systemName: "cart.fill"),
+//                style: .done,
+//                target: self,
+//                action: nil
+//        )
+//
+//    }
+    
+    @IBAction func btnCart(_ sender: UIButton) {
+        performSegue(withIdentifier: "sendCart", sender: nil)
     }
     
     @IBAction func incQuantity(_ sender: Any) {
