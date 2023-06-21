@@ -561,6 +561,7 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="btnAddToCart:" destination="64o-5J-xb2" eventType="touchUpInside" id="ZEa-GY-QMG"/>
+                                                    <action selector="btnCheckout:" destination="g1e-71-eTg" eventType="touchUpInside" id="j6u-PZ-8dX"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7g-yL-DcI">
@@ -605,6 +606,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nba-pT-wBD"/>
+                    <connections>
+                        <outlet property="collectionView" destination="IMi-hz-IJU" id="VJZ-2O-RcT"/>
+                        <outlet property="totalPrice" destination="j7g-yL-DcI" id="9c0-vi-GdI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ht-c0-Xd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
