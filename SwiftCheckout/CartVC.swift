@@ -9,16 +9,19 @@ import UIKit
 
 class CartVC: UIViewController {
 
+    @IBOutlet weak var totalPrice: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     var cartArray: [[String]] = (UserDefaults.standard.array(forKey: "cart") as? [[String]])!
     var numItems: Int = 0
+    var sum = 0
+    var p:[Int] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         //var myInstance = cartViewModel()
         //navigationItem.leftBarButtonItem = editButtonItem
         numItems = cartArray.count
         //cartArray = (UserDefaults.standard.array(forKey: "cart") as? [[String]])!
-        print(cartArray[0][1])
+        //print(cartArray)
       
     }
     
@@ -32,7 +35,7 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        print(numItems)
+        //print(numItems)
         return numItems
     }
     
@@ -64,11 +67,30 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 //        cell.layer.shadowOpacity = 2
 //        cell.layer.shadowOffset = CGSize(width: 0, height: 2)
 //        cell.layer.shadowRadius = 4
+        let price =  (Int(cartArray[indexPath.item][3]) ?? 0) * (Int(cartArray[indexPath.row][2]) ?? 0)
+        p.append(price)
+        print(p)
+        sum = 0
+        for i in (p){
+            sum += i
+            print(sum)
+        }
+        totalPrice.text = "R" + String(sum)
+//        for (index, i) in (p).enumerated() {
+//            if index % 2 == 0 {
+//                // Skip the even-indexed item
+//                continue
+//            }
+//            sum += Int(cartArray[indexPath.item][3]) ?? 0
+//            // Process the odd-indexed item
+//            print(p)
+//        }
         
         cell.proImage.image = UIImage(named: cartArray[indexPath.row][0])
         cell.proName.text = cartArray[indexPath.row][1]
         cell.proQuan.text = cartArray[indexPath.row][2]
         cell.delegate = self
+        cell.proPrice.text = "R" + String(price)
 //        cell.removeBtn.layer.setValue(indexPath.row, forKey: "index")
 //        cell.removeBtn.addTarget(self, action: Selector(("deleteUser")), for: UIControl.Event.touchUpInside)
             

@@ -34,7 +34,7 @@ class DetailsVC: UIViewController {
         
         SubView.layer.cornerRadius = 25
         imgBackground.layer.cornerRadius = 25
-        countLabel.text = String(UserDefaults.standard.integer(forKey: "cartCount") )
+        countLabel.text = String((UserDefaults.standard.array(forKey: "cart") as? [[String]])?.count ?? 0)
         proName.text = pName
         //navigationItem.title = pName
         //navigationItem.backBarButtonItem.
@@ -76,8 +76,9 @@ class DetailsVC: UIViewController {
         
         count = UserDefaults.standard.integer(forKey: "cartCount") + 1
         //countLabel.text = String(count)
-        countLabel.text = String((UserDefaults.standard.array(forKey: "cart") as? [[String]])!.count)
         UserDefaults.standard.set(count, forKey: "cartCount")
+        countLabel.text = String((UserDefaults.standard.array(forKey: "cart") as? [[String]])?.count ?? 0)
+        
         
         iconShake = CABasicAnimation(keyPath: "transform.rotation.z")
         iconShake.fromValue = -0.2
@@ -89,7 +90,7 @@ class DetailsVC: UIViewController {
         
         var myInstance = cartViewModel()
 
-        myInstance.addToCart(imageURl: pImage, name: pName, quantity: quantity)
+        myInstance.addToCart(imageURl: pImage, name: pName, quantity: quantity, price: pPrice)
 //
 //        let new = [pImage, pName, quantity] as [Any]
 //        cart.append(new)
