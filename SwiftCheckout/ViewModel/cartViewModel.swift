@@ -20,21 +20,37 @@ struct cartViewModel {
 //    }
     
     mutating func addToCart(imageURl: String, name:String, quantity: Int, price: Int){
+        
         let new = [imageURl, name, String(quantity), String(price)]
         
         if var cart = UserDefaults.standard.array(forKey: "cart")  as? [[String]] {
-  
+//            print(new)
+//            for i in (cart){
+//                print(i)
+//                for j in i {
+//                    print(j)
+//                    print(name)
+//                    if (j == name){
+//                        print(j)
+//                    }else{
+//                        cart.append(new)
+//                    }
+//                }
+//            }
             cart.append(new)
+            
+            
             
           
             UserDefaults.standard.set(cart, forKey: "cart")
         } else {
             
-            let newArray: [[String]] = []
+            var newArray: [[String]] = []
             
             UserDefaults.standard.set(newArray, forKey: "cart")
-            
-            print(newArray)
+            //print(new)
+            //newArray.append(new)
+            //print(newArray)
         }
         
         //cart.append(contentsOf: new)
