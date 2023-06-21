@@ -15,7 +15,7 @@ class CartVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //var myInstance = cartViewModel()
-        navigationItem.leftBarButtonItem = editButtonItem
+        //navigationItem.leftBarButtonItem = editButtonItem
         numItems = cartArray.count
         //cartArray = (UserDefaults.standard.array(forKey: "cart") as? [[String]])!
         print(cartArray[0][1])
@@ -91,15 +91,16 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 extension CartVC: CartViewCellDelegate{
     func delete(cell: CartViewCell) {
         if let indexPath = collectionView?.indexPath(for: cell){
-            print(numItems)
-            print(indexPath.section)
+            numItems -= 1
+            collectionView.reloadData()
             cartArray.remove(at: indexPath.item)
             //cartArray[indexPath.section].remove(at: indexPath.item)
-            collectionView?.deleteItems(at: [indexPath])
-//
-//            numItems -= 1
-//            collectionView.reloadData()
-//            print(numItems - 1)
+           
+            //cartArray[indexPath.section].remove(at: indexPath.item)
+            //collectionView?.deleteItems(at: [indexPath])
+
         }
+        UserDefaults.standard.set(cartArray, forKey: "cart")
+        cartArray = (UserDefaults.standard.array(forKey: "cart") as? [[String]])!
     }
 }

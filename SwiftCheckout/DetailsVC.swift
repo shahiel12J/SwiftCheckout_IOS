@@ -75,7 +75,8 @@ class DetailsVC: UIViewController {
     @IBAction func btnAddToCart(_ sender: Any) {
         
         count = UserDefaults.standard.integer(forKey: "cartCount") + 1
-        countLabel.text = String(count)
+        //countLabel.text = String(count)
+        countLabel.text = String((UserDefaults.standard.array(forKey: "cart") as? [[String]])!.count)
         UserDefaults.standard.set(count, forKey: "cartCount")
         
         iconShake = CABasicAnimation(keyPath: "transform.rotation.z")
