@@ -264,7 +264,7 @@
             </objects>
             <point key="canvasLocation" x="3396.1832061068699" y="-7.042253521126761"/>
         </scene>
-        <!--Details-->
+        <!--DetailsVC-->
         <scene sceneID="H8J-S4-Tcu">
             <objects>
                 <viewController storyboardIdentifier="DetailsVC" id="64o-5J-xb2" customClass="DetailsVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
@@ -353,7 +353,7 @@
                                                         <rect key="frame" x="50" y="8" width="24" height="33.666666666666664"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain">
-                                                            <backgroundConfiguration key="background" image="leftArrow" imageContentMode="scaleAspectFit"/>
+                                                            <backgroundConfiguration key="background" image="minus" imageContentMode="scaleAspectFit"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="decQuantity:" destination="64o-5J-xb2" eventType="touchUpInside" id="3kI-Jm-vf5"/>
@@ -369,7 +369,7 @@
                                                         <rect key="frame" x="319" y="8" width="24" height="33.666666666666664"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain">
-                                                            <backgroundConfiguration key="background" image="rightArrow" imageContentMode="scaleAspectFit"/>
+                                                            <backgroundConfiguration key="background" image="plus 1" imageContentMode="scaleAspectFit"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="incQuantity:" destination="64o-5J-xb2" eventType="touchUpInside" id="ofI-gS-WPz"/>
@@ -417,6 +417,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmQ-F4-ppL">
+                                <rect key="frame" x="300" y="59" width="54" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="cart.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="btnCart:" destination="64o-5J-xb2" eventType="touchUpInside" id="EQ1-6a-GdW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dRN-2R-b2b"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -430,10 +440,11 @@
                             <constraint firstItem="toH-XF-X0W" firstAttribute="leading" secondItem="dRN-2R-b2b" secondAttribute="leading" constant="344" id="y1D-Oq-93l"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Details" id="415-Uw-Bbg"/>
+                    <navigationItem key="navigationItem" id="415-Uw-Bbg"/>
                     <connections>
                         <outlet property="SubView" destination="if8-Yy-OI0" id="N97-ey-sCJ"/>
                         <outlet property="btnAddToCart" destination="iIp-Ak-Mnu" id="W3F-Np-Sjl"/>
+                        <outlet property="btnCart" destination="bmQ-F4-ppL" id="Qi5-jv-3MA"/>
                         <outlet property="countLabel" destination="toH-XF-X0W" id="SRs-Pw-l1h"/>
                         <outlet property="imgBackground" destination="0bJ-y0-mqE" id="X7R-61-l6W"/>
                         <outlet property="imgView" destination="Yka-7F-bRZ" id="Txq-mV-tLz"/>
@@ -550,6 +561,7 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="btnAddToCart:" destination="64o-5J-xb2" eventType="touchUpInside" id="ZEa-GY-QMG"/>
+                                                    <action selector="btnCheckout:" destination="g1e-71-eTg" eventType="touchUpInside" id="j6u-PZ-8dX"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7g-yL-DcI">
@@ -594,10 +606,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nba-pT-wBD"/>
+                    <connections>
+                        <outlet property="collectionView" destination="IMi-hz-IJU" id="VJZ-2O-RcT"/>
+                        <outlet property="totalPrice" destination="j7g-yL-DcI" id="9c0-vi-GdI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ht-c0-Xd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6362.5954198473282" y="-7.042253521126761"/>
+            <point key="canvasLocation" x="5744" y="-7"/>
         </scene>
         <!--CheckoutVC-->
         <scene sceneID="5xq-ii-B5z">
@@ -651,7 +667,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAd-kK-VeG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5759.5419847328239" y="-7.042253521126761"/>
+            <point key="canvasLocation" x="4905" y="-7"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="ZAJ-2p-hkS">
@@ -1285,15 +1301,18 @@
         <segue reference="J3U-gM-gM2"/>
         <segue reference="db6-n4-RKr"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Image" width="166.66667175292969" height="166.66667175292969"/>
         <image name="LaunchScreenImage" width="112.33333587646484" height="90"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
-        <image name="leftArrow" width="75" height="134.33332824707031"/>
         <image name="lock.rotation" catalog="system" width="128" height="112"/>
         <image name="off" width="128" height="128"/>
+        <image name="manage account icon" width="166.66667175292969" height="166.66667175292969"/>
+        <image name="minus" width="170.66667175292969" height="170.66667175292969"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus 1" width="170.66667175292969" height="170.66667175292969"/>
         <image name="profile" width="122" height="128"/>
         <image name="questionmark" catalog="system" width="94" height="128"/>
         <image name="rightArrow" width="75" height="134.33332824707031"/>
