@@ -19,8 +19,8 @@ struct cartViewModel {
 //        defaults.set(cart, forKey: "cart")
 //    }
     
-    mutating func addToCart(imageURl: String, name:String, quantity: Int){
-        let new = [imageURl, name, String(quantity)]
+    mutating func addToCart(imageURl: String, name:String, quantity: Int, price: Int){
+        let new = [imageURl, name, String(quantity), String(price)]
         
         if var cart = UserDefaults.standard.array(forKey: "cart")  as? [[String]] {
   

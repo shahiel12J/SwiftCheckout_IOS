@@ -17,6 +17,7 @@ class CartViewCell: UICollectionViewCell {
     @IBOutlet weak var proQuan: UILabel!
     @IBOutlet weak var proName: UILabel!
     @IBOutlet weak var proImage: UIImageView!
+    @IBOutlet weak var proPrice: UILabel!
     
     weak var delegate: CartViewCellDelegate?
     
