@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController {
 
@@ -118,9 +119,21 @@ class LoginVC: UIViewController {
         }
     
     @IBAction func linkClick(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "VieAllVC") as! ViewAllVC
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewAllVC") as! ViewAllVC
         
         self.navigationController?.pushViewController(vc, animated: true)
+        guard let email = userName.text else { return }
+                  guard let password = password.text else { return }
+
+        Auth.auth().signIn(withEmail: email, password: password) { firebaseResult, error in
+            if error != nil {
+                          print("error")
+                      }
+                      else {
+                          //go to home screen
+                          self.performSegue(withIdentifier: "ViewAllVC", sender: self)
+                      }
+                  }
     }
 }
 

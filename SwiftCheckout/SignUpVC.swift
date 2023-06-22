@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpVC: UIViewController {
     
@@ -198,12 +199,28 @@ class SignUpVC: UIViewController {
           let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
           
           self.navigationController?.pushViewController(vc, animated: true)
+          guard let email = email.text else { return }
+          guard let password = password1.text else { return }
+
+          
+                    Auth.auth().createUser(withEmail: email, password: password) { firebaseResult, error in
+                        if error != nil {
+                            print("error")
+                        }
+                        else {
+                            //go to home screen
+                            self.performSegue(withIdentifier: "", sender: self)
+                        }
+                    }
       }
     
     func showSuccessModal() {
             let successModalVC = SuccessModalVC()
             successModalVC.modalPresentationStyle = .overFullScreen
             self.present(successModalVC, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                       successModalVC.dismiss(animated: true, completion: nil)
+                   }
         }
     
 }
@@ -213,15 +230,6 @@ extension UIColor {
     }
 }
 
-
-//func addAlert(message: String, title: String) {
-//        let alert = UIAlertController(title: title, message: message,preferredStyle: UIAlertController.Style.alert)
-//
-//        alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: { _ in
-//                //Cancel Action
-//            }))
-//            self.present(alert, animated: true, completion: nil)
-//        }
 
 
 
