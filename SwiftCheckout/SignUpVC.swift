@@ -194,11 +194,28 @@ class SignUpVC: UIViewController {
               // Show success modal
               showSuccessModal()
           }
+    
+    
+    @IBAction func RolvaSignUp(_ sender: UIButton){
+        if let password = password1.text, let email = email.text {
+            Auth.auth().createUser(withEmail: email, password: password) { firebaseResult, error in
+                if  error != nil {
+                    print(error!.localizedDescription)
+                }
+                else {
+                    //go to home screen
+                    self.performSegue(withIdentifier: "ViewAllVC", sender: self)
+                }
+            }
+        }
+    }
           
       @IBAction func linkClick(_ sender: Any) {
+          
           let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
           
           self.navigationController?.pushViewController(vc, animated: true)
+          
           guard let email = email.text else { return }
           guard let password = password1.text else { return }
 
@@ -206,10 +223,11 @@ class SignUpVC: UIViewController {
                     Auth.auth().createUser(withEmail: email, password: password) { firebaseResult, error in
                         if error != nil {
                             print("error")
+//                            print(error?.localizedDescription)
                         }
                         else {
                             //go to home screen
-                            self.performSegue(withIdentifier: "", sender: self)
+                            self.performSegue(withIdentifier: "ViewAllVC", sender: self)
                         }
                     }
       }
