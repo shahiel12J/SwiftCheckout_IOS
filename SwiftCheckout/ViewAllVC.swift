@@ -22,7 +22,7 @@ class ViewAllVC: UIViewController {
     
     var searchImages: ProductViewModel!
     var searchName: ProductViewModel!
-    var checkLogged: Bool = (UserDefaults.standard.bool(forKey: "LoggedIn"))
+    //var checkLogged: Bool = (UserDefaults.standard.bool(forKey: "LoggedIn"))
     
     var count = 0
    // var data = [Product]()

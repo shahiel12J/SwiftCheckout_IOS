@@ -164,8 +164,8 @@ class LoginVC: UIViewController {
 
                 // User is logged in successfully
                 print("Logged in user: (user.uid)")
-                IsLoggedIn = true
-                UserDefaults.standard.set(IsLoggedIn, forKey: "LoggedIn")
+                //IsLoggedIn = true
+                //UserDefaults.standard.set(IsLoggedIn, forKey: "LoggedIn")
                 self.navigationController?.pushViewController(vc, animated: true)
                 // Perform additional tasks after successful login
             }
