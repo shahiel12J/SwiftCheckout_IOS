@@ -30,6 +30,7 @@ class CartViewCell: UICollectionViewCell {
            super.awakeFromNib()
            setupCellAppearance()
        }
+    
        
        private func setupCellAppearance() {
            cartCell.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)

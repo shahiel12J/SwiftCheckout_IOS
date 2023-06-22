@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4DCCB5642A2F3194000E6F28 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCB5632A2F3194000E6F28 /* CollectionViewCell.swift */; };
+		6A3EE22A2A4484DC00068A70 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3EE2292A4484DC00068A70 /* ProfileVC.swift */; };
 		6A7BD5712A387B850049C287 /* CollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7BD5702A387B850049C287 /* CollectionViewCell2.swift */; };
 		6A8195852A31B8190093A979 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8195842A31B8190093A979 /* DataService.swift */; };
 		6A9D7CBC2A3B082D006138A6 /* cartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D7CBB2A3B082D006138A6 /* cartViewModel.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		4DCCB5632A2F3194000E6F28 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		6A3EE2292A4484DC00068A70 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		6A7BD5702A387B850049C287 /* CollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell2.swift; sourceTree = "<group>"; };
 		6A8195842A31B8190093A979 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		6A9D7CBB2A3B082D006138A6 /* cartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartViewModel.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				6AEAD9E32A4062E500657F00 /* CartViewCell.swift */,
 				6A7BD5702A387B850049C287 /* CollectionViewCell2.swift */,
 				6ADB4F192A2DB21700CDC2EF /* SceneDelegate.swift */,
+				6A3EE2292A4484DC00068A70 /* ProfileVC.swift */,
 				6ADB4F1B2A2DB21700CDC2EF /* ViewController.swift */,
 				ABC3DFAD2A44384100EBB488 /* HelpVC.swift */,
 				CCBE51D92A2F312F0077B1A0 /* LaunchScreen.swift */,
@@ -248,6 +251,7 @@
 				6ADB4F182A2DB21700CDC2EF /* AppDelegate.swift in Sources */,
 				6A7BD5712A387B850049C287 /* CollectionViewCell2.swift in Sources */,
 				6ADB4F1A2A2DB21700CDC2EF /* SceneDelegate.swift in Sources */,
+				6A3EE22A2A4484DC00068A70 /* ProfileVC.swift in Sources */,
 				6A8195852A31B8190093A979 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
