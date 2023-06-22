@@ -289,7 +289,7 @@ class SignUpVC: UIViewController {
             let successModalVC = SuccessModalVC()
             successModalVC.modalPresentationStyle = .overFullScreen
             self.present(successModalVC, animated: true, completion: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                        successModalVC.dismiss(animated: true, completion: nil)
                    }
         }
