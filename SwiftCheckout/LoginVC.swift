@@ -166,7 +166,7 @@ class LoginVC: UIViewController {
                       }
                       else {
                           //go to home screen
-                          self.performSegue(withIdentifier: "ViewAllVC", sender: self)
+                          self.navigationController?.pushViewController(vc, animated: true)
                       }
                   }
     }
