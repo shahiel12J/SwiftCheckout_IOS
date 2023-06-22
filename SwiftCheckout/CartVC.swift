@@ -60,13 +60,13 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             price = 0
             quantity = 0
             cell.proImage.isHidden = true
-            cell.proName.isHidden = true
+            cell.proName.text = "Cart is empty"
             cell.proQuan.isHidden = true
             cell.proPrice.text = ""
             cell.removeBtn.isHidden = true
             cell.increaseBtn.isHidden = true
             cell.decreaseBtn.isHidden = true
-            cell.cartCell.isHidden = true
+            //cell.cartCell.isHidden = true
         }else{
             print(p)
             price = (Int(cartArray[indexPath.item][3]) ?? 0) * (Int(cartArray[indexPath.row][2]) ?? 0)
