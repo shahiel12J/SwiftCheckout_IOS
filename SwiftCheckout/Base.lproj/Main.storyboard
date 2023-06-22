@@ -956,6 +956,9 @@
                                 <color key="tintColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
+                                <connections>
+                                    <segue destination="Fq8-x5-d6R" kind="show" id="4Ja-zZ-uck"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U6h-yf-GEP">
                                 <rect key="frame" x="70" y="303" width="253" height="35"/>
@@ -1011,7 +1014,7 @@
         <!--Profile-->
         <scene sceneID="zo7-hO-2a3">
             <objects>
-                <viewController title="Profile" id="VGw-hF-uUQ" sceneMemberID="viewController">
+                <viewController title="Profile" id="VGw-hF-uUQ" customClass="ProfileVC" customModule="SwiftCheckout" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="1bP-wY-3R5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1053,6 +1056,7 @@
                                     <backgroundConfiguration key="background"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="logoutClick:" destination="VGw-hF-uUQ" eventType="touchUpInside" id="iwo-cd-4Da"/>
                                     <segue destination="7dr-ht-mqy" kind="show" id="x38-QH-O8Z"/>
                                 </connections>
                             </button>
@@ -1080,6 +1084,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Fxv-DW-WZ4"/>
+                    <connections>
+                        <outlet property="logoutBtn" destination="0j6-Yf-DcE" id="OOJ-Bs-jW8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kca-1O-I5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1417,6 +1424,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="4Ja-zZ-uck"/>
         <segue reference="J3U-gM-gM2"/>
         <segue reference="AME-Xr-fmK"/>
     </inferredMetricsTieBreakers>

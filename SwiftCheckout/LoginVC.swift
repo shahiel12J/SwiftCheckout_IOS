@@ -17,6 +17,7 @@ class LoginVC: UIViewController {
     
     var iconClick = false
     let imageIcon = UIImageView()
+    var IsLoggedIn = false
     
     private var errorLabels: [UILabel] = []
     
@@ -110,7 +111,7 @@ class LoginVC: UIViewController {
         
         if errorMessages.isEmpty {
             clearErrorMessages()
-            login()
+            //login()
         } else {
             showErrorMessages(errorMessages)
         }
@@ -140,11 +141,34 @@ class LoginVC: UIViewController {
         errorLabels.removeAll()
     }
     
-    func login() {
-        // Perform login logic
-        // ...
-        // Show success modal
-        //showSuccessModal()
+    func login(withEmail email: String, password: String) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewAllVC") as! ViewAllVC
+    
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+                if let error = error {
+                    // Handle login error
+                    print("Login error: (error.localizedDescription)")
+                    let alert = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                DispatchQueue.main.async {
+                                    UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+                                }
+                    return
+                }
+
+                // Login successful
+                guard let user = result?.user else {
+                    print("Failed to get user after login")
+                    return
+                }
+
+                // User is logged in successfully
+                print("Logged in user: (user.uid)")
+                IsLoggedIn = true
+                UserDefaults.standard.set(IsLoggedIn, forKey: "LoggedIn")
+                self.navigationController?.pushViewController(vc, animated: true)
+                // Perform additional tasks after successful login
+            }
     }
     
     func showSuccessModal() {
@@ -154,21 +178,7 @@ class LoginVC: UIViewController {
         }
     
     @IBAction func btnLoginIn(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewAllVC") as! ViewAllVC
-        
-        self.navigationController?.pushViewController(vc, animated: true)
-        guard let email = userName.text else { return }
-                  guard let password = password.text else { return }
-
-        Auth.auth().signIn(withEmail: email, password: password) { firebaseResult, error in
-            if error != nil {
-                          print("error")
-                      }
-                      else {
-                          //go to home screen
-                          self.navigationController?.pushViewController(vc, animated: true)
-                      }
-                  }
+        login(withEmail: userName.text ?? "default", password: password.text ?? "default" )
     }
 
 }
