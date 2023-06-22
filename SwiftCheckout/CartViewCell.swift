@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol CartViewCellDelegate: class {
+protocol CartViewCellDelegate: AnyObject {
     func delete(cell:CartViewCell)
 }
 
