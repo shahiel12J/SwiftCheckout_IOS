@@ -22,7 +22,7 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var btnCart: UIButton!
     
     var cart: [Any] = []
-    
+    var nameCheck:Bool = false
     var iconShake = CABasicAnimation()
     var count = 0
     var quantity = 1
@@ -30,7 +30,8 @@ class DetailsVC: UIViewController {
     var pDescription = ""
     var pPrice: Int = 0
     var pImage = ""
-    
+    var cartArray: [[String]] = (UserDefaults.standard.array(forKey: "cart") as? [[String]] ?? [["default"]])
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -96,12 +97,55 @@ class DetailsVC: UIViewController {
         imgView.layer.add(iconShake, forKey: "iconShakeAnimation")
         
         var myInstance = cartViewModel()
+        
+        cartArray = (UserDefaults.standard.array(forKey: "cart") as? [[String]] ?? [["default"]])
+        
+        for (rowIndex, row) in cartArray.enumerated(){
+            for (columnIndex, value) in row.enumerated(){
+                if (value == pName){
+                    
+                        showAlert()
+                        cartArray[rowIndex][2] = String(quantity)
+                        UserDefaults.standard.set(cartArray, forKey: "cart")
+                        nameCheck = true
+                    
+                }
+            }
+        }
+        
+        if (nameCheck == false){
+            myInstance.addToCart(imageURl: pImage, name: pName, quantity: quantity, price: pPrice)
+        }else{
+            print("go away")
+        }
 
-        myInstance.addToCart(imageURl: pImage, name: pName, quantity: quantity, price: pPrice)
-//
-//        let new = [pImage, pName, quantity] as [Any]
-//        cart.append(new)
-//        print(cart)
+    }
+    func showAlert2() {
+        let alertController = UIAlertController(title: "Item In Cart", message: "Item already in cart. Try changing the quantity", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+        }
+        
+        alertController.addAction(okAction)
+        
+        // Present the alert
+        if let rootViewController = UIApplication.shared.keyWindow?.rootViewController {
+            rootViewController.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func showAlert() {
+        let alertController = UIAlertController(title: "Updated", message: "Quantity updated", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+        }
+        
+        alertController.addAction(okAction)
+        
+        // Present the alert
+        if let rootViewController = UIApplication.shared.keyWindow?.rootViewController {
+            rootViewController.present(alertController, animated: true, completion: nil)
+        }
     }
     
 }
