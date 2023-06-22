@@ -47,19 +47,25 @@ class DetailsVC: UIViewController {
         proDes.text = pDescription
         proPrice.text = "R" + String(pPrice)
         imgView.image = UIImage(named: pImage)
-//        navConfig()
+        navConfig()
 
     }
     
-//    private func navConfig(){
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
-//                image: UIImage(systemName: "cart.fill"),
-//                style: .done,
-//                target: self,
-//                action: nil
-//        )
-//
-//    }
+    private func navConfig(){
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+                image: UIImage(systemName: "cart.fill"),
+                style: .done,
+                target: self,
+                action: #selector(toCart)
+        )
+
+    }
+    
+    @objc func toCart() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CartVC") as! CartVC
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     @IBAction func btnCart(_ sender: UIButton) {
         performSegue(withIdentifier: "sendCart", sender: nil)
