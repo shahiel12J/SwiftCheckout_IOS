@@ -20,12 +20,8 @@ class CartVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //var myInstance = cartViewModel()
         //navigationItem.leftBarButtonItem = editButtonItem
         numItems = cartArray.count
-        //cartArray = (UserDefaults.standard.array(forKey: "cart") as? [[String]])!
-        print(cartArray)
-      
     }
     
     @IBAction func btnCheckout(_ sender: UIButton) {
@@ -41,18 +37,9 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        //print(numItems)
         return numItems
     }
     
-//    func deleteUser(sender:UIButton) {
-//
-//        let i : Int = (sender.layer.value(forKey: "index")) as! Int
-//        cartArray.remove(at: i)
-//        collectionView.reloadData()
-//    }
-//
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         
@@ -66,11 +53,8 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+    
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CartViewCell else {return UICollectionViewCell()}
-        
-        //let cartCell = CartViewCell()
-//        print(cartArray)
         
         if (cartArray == [["default"]]){
             price = 0
@@ -78,12 +62,12 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             cell.proImage.isHidden = true
             cell.proName.isHidden = true
             cell.proQuan.isHidden = true
-            //cell.delegate = self
             cell.proPrice.text = ""
             cell.removeBtn.isHidden = true
             cell.increaseBtn.isHidden = true
             cell.decreaseBtn.isHidden = true
         }else{
+            print(p)
             price = (Int(cartArray[indexPath.item][3]) ?? 0) * (Int(cartArray[indexPath.row][2]) ?? 0)
             
             p.append(price)
@@ -91,9 +75,8 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             sum = 0
             for i in (p){
                 sum += i
-                //print(sum)
             }
-            
+        
             totalPrice.text = "R" + String(sum)
             
             quantity = Int(cartArray[indexPath.row][2]) ?? 0
@@ -104,15 +87,11 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             cell.delegate = self
             cell.proPrice.text = "R" + String(price)
         }
-        
-
         return cell
-        
-        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return  CGSize(width: 110, height: 110)
-
     }
 
     
@@ -125,14 +104,7 @@ extension CartVC: CartViewCellDelegate{
             cartArray.remove(at: indexPath.item)
             totalPrice.text = String(0)
             collectionView.reloadData()
-
-//            print(cartArray)
-//            print((UserDefaults.standard.array(forKey: "cart") as? [[String]] ?? [["default"]]))
-            //cartArray[indexPath.section].remove(at: indexPath.item)
-           
-            //cartArray[indexPath.section].remove(at: indexPath.item)
-            //collectionView?.deleteItems(at: [indexPath])
-
+            p = []
         }
         UserDefaults.standard.set(cartArray, forKey: "cart")
         cartArray = (UserDefaults.standard.array(forKey: "cart") as? [[String]])!
