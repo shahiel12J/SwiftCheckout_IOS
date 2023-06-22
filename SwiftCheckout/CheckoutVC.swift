@@ -2,13 +2,13 @@
 //  CheckoutVC.swift
 //  SwiftCheckout
 //
-//  Created by DA MAC  M1 133 on 2023/06/15.
+//  Created by DA MAC  M1 133 on 2023/06/22.
 //
 
 import UIKit
 
 class CheckoutVC: UIViewController {
-
+    
     @IBOutlet weak var cartImg: UIImageView!
     @IBOutlet weak var thankLbl: UILabel!
     @IBOutlet weak var orderLbl: UILabel!

@@ -39,12 +39,14 @@ class DetailsVC: UIViewController {
         SubView.layer.cornerRadius = 25
         imgBackground.layer.cornerRadius = 25
         countLabel.text = String((UserDefaults.standard.array(forKey: "cart") as? [[String]])?.count ?? 0)
+        countLabel.layer.cornerRadius = 5
+        countLabel.clipsToBounds = true
         proName.text = pName
         //navigationItem.title = pName
         //navigationItem.backBarButtonItem.
         proDes.text = pDescription
         proPrice.text = "R" + String(pPrice)
-        imgView.image = UIImage(named: pImage) 
+        imgView.image = UIImage(named: pImage)
 //        navConfig()
 
     }

@@ -2,7 +2,7 @@
 //  HelpVC.swift
 //  SwiftCheckout
 //
-//  Created by DA MAC  M1 133 on 2023/06/19.
+//  Created by DA MAC  M1 133 on 2023/06/22.
 //
 
 import UIKit
@@ -22,5 +22,4 @@ class HelpVC: UIViewController {
         imgView.image = hImage
 
     }
-
 }

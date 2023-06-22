@@ -25,10 +25,15 @@
 		6AEAD9E22A403F2900657F00 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEAD9E12A403F2900657F00 /* Cart.swift */; };
 		6AEAD9E42A4062E500657F00 /* CartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEAD9E32A4062E500657F00 /* CartViewCell.swift */; };
 
+		ABC3DFAE2A44384100EBB488 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3DFAD2A44384100EBB488 /* HelpVC.swift */; };
+		ABC3DFB02A4438D000EBB488 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3DFAF2A4438D000EBB488 /* CheckoutVC.swift */; };
+
+
 		CC99B1D42A432C9700CD29E5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CC99B1D32A432C9700CD29E5 /* FirebaseAuth */; };
 		CC99B1D62A43356A00CD29E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC99B1D52A43356A00CD29E5 /* GoogleService-Info.plist */; };
 
 		8B596E892A43269D0084AAB0 /* UpdatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B596E882A43269D0084AAB0 /* UpdatePasswordViewController.swift */; };
+
 
 		CCBE51DA2A2F312F0077B1A0 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBE51D92A2F312F0077B1A0 /* LaunchScreen.swift */; };
 		CCBE52292A3886C10077B1A0 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBE52282A3886C10077B1A0 /* SignUpVC.swift */; };
@@ -56,6 +61,10 @@
 		6ADB4F2D2A2DDAA900CDC2EF /* ViewAllVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllVC.swift; sourceTree = "<group>"; };
 		6AEAD9E12A403F2900657F00 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		6AEAD9E32A4062E500657F00 /* CartViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewCell.swift; sourceTree = "<group>"; };
+
+		ABC3DFAD2A44384100EBB488 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
+		ABC3DFAF2A4438D000EBB488 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+
 
 		CC99B1D52A43356A00CD29E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 
@@ -134,8 +143,10 @@
 				6A7BD5702A387B850049C287 /* CollectionViewCell2.swift */,
 				6ADB4F192A2DB21700CDC2EF /* SceneDelegate.swift */,
 				6ADB4F1B2A2DB21700CDC2EF /* ViewController.swift */,
+				ABC3DFAD2A44384100EBB488 /* HelpVC.swift */,
 				CCBE51D92A2F312F0077B1A0 /* LaunchScreen.swift */,
 				6ADB4F1D2A2DB21700CDC2EF /* Main.storyboard */,
+				ABC3DFAF2A4438D000EBB488 /* CheckoutVC.swift */,
 				CCBE522C2A39F7D10077B1A0 /* SuccessModalVC.swift */,
 				CCBE522A2A3886FB0077B1A0 /* LoginVC.swift */,
 				CCBE52282A3886C10077B1A0 /* SignUpVC.swift */,
@@ -228,12 +239,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC3DFAE2A44384100EBB488 /* HelpVC.swift in Sources */,
 				6ABF0EDF2A3063E700C014A7 /* ProductsViewModel.swift in Sources */,
 				6ADB4F1C2A2DB21700CDC2EF /* ViewController.swift in Sources */,
 				6A9D7CBC2A3B082D006138A6 /* cartViewModel.swift in Sources */,
 				CCBE522B2A3886FB0077B1A0 /* LoginVC.swift in Sources */,
 				6AEAD9E42A4062E500657F00 /* CartViewCell.swift in Sources */,
+
+				ABC3DFB02A4438D000EBB488 /* CheckoutVC.swift in Sources */,
+
 				8B596E892A43269D0084AAB0 /* UpdatePasswordViewController.swift in Sources */,
+
 				6ADB4F2C2A2DBD2F00CDC2EF /* DetailsVC.swift in Sources */,
 				CCBE522D2A39F7D10077B1A0 /* SuccessModalVC.swift in Sources */,
 				CCBE52292A3886C10077B1A0 /* SignUpVC.swift in Sources */,
