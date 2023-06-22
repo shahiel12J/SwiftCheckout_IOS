@@ -22,7 +22,7 @@ class SuccessModalVC: UIViewController {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
         titleLabel.text = "Successfully Registered"
         titleLabel.textAlignment = .center
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
         titleLabel.center = view.center
         titleLabel.textColor = .white
         view.addSubview(titleLabel)
