@@ -20,12 +20,17 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var LoginBtn: UIButton!
     private var errorLabels: [UILabel] = []
     
+    var passwordToggleImageView: UIImageView!
+    var confirmPasswordToggleImageView: UIImageView!
+    
     override func viewDidLoad() {
         
         
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        setupPasswordTextField()
+        setupConfirmPasswordTextField()
+                
         
         let myView = UIView()
         myView.backgroundColor = UIColor.darkGreen
@@ -72,10 +77,56 @@ class SignUpVC: UIViewController {
         confirmPassword.leftViewMode = .always
         
         SignUpBtn.addTarget(self, action: #selector(registerButtonTapped(_:)), for: .touchUpInside)
-
-
         
     }
+    
+    func setupPasswordTextField() {
+            let passwordRightView = UIView(frame: CGRect(x: 0, y: 0, width: 48, height: 24))
+            let passwordContentView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 24))
+            
+            passwordToggleImageView = UIImageView(image: UIImage(named: "closedeye"))
+            passwordToggleImageView.contentMode = .scaleAspectFit
+            passwordToggleImageView.frame = CGRect(x: 6, y: 0, width: 24, height: 24)
+            passwordContentView.addSubview(passwordToggleImageView)
+            
+            let passwordTapGesture = UITapGestureRecognizer(target: self, action: #selector(passwordToggleTapped))
+            passwordContentView.addGestureRecognizer(passwordTapGesture)
+            
+            passwordRightView.addSubview(passwordContentView)
+            password1.rightView = passwordRightView
+            password1.rightViewMode = .always
+            password1.isSecureTextEntry = true
+        }
+    func setupConfirmPasswordTextField() {
+            let confirmPasswordRightView = UIView(frame: CGRect(x: 0, y: 0, width: 48, height: 24))
+            let confirmPasswordContentView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 24))
+            
+            confirmPasswordToggleImageView = UIImageView(image: UIImage(named: "closedeye"))
+            confirmPasswordToggleImageView.contentMode = .scaleAspectFit
+            confirmPasswordToggleImageView.frame = CGRect(x: 6, y: 0, width: 24, height: 24)
+            confirmPasswordContentView.addSubview(confirmPasswordToggleImageView)
+            
+            let confirmPasswordTapGesture = UITapGestureRecognizer(target: self, action: #selector(confirmPasswordToggleTapped))
+            confirmPasswordContentView.addGestureRecognizer(confirmPasswordTapGesture)
+            
+            confirmPasswordRightView.addSubview(confirmPasswordContentView)
+            confirmPassword.rightView = confirmPasswordRightView
+            confirmPassword.rightViewMode = .always
+            confirmPassword.isSecureTextEntry = true
+        }
+    
+    @objc func passwordToggleTapped() {
+            password1.isSecureTextEntry.toggle()
+            let imageName = password1.isSecureTextEntry ? "closedeye" : "openeye"
+            passwordToggleImageView.image = UIImage(named: imageName)
+        }
+        
+        @objc func confirmPasswordToggleTapped() {
+            confirmPassword.isSecureTextEntry.toggle()
+            let imageName = confirmPassword.isSecureTextEntry ? "closedeye" : "openeye"
+            confirmPasswordToggleImageView.image = UIImage(named: imageName)
+        }
+    
     @objc func registerButtonTapped(_ sender: UIButton) {
               validateFields()
           }

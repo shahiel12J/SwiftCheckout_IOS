@@ -15,10 +15,33 @@ class LoginVC: UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var SignUp: UIButton!
     
+    var iconClick = false
+    let imageIcon = UIImageView()
+    
     private var errorLabels: [UILabel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imageIcon.image = UIImage(named: "closedeye")
+                        let contentView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 24))
+                        let imageViewWidth = imageIcon.image?.size.width ?? 0
+                        let imageViewHeight = imageIcon.image?.size.height ?? 0
+                        let scaleFactor = min(18 / imageViewWidth, 24 / imageViewHeight)
+                        let scaledWidth = imageViewWidth * scaleFactor
+                        let scaledHeight = imageViewHeight * scaleFactor
+                        let paddingX = (30 - scaledWidth) / 2
+                        let paddingY = (24 - scaledHeight) / 2
+                        imageIcon.frame = CGRect(x: paddingX, y: paddingY, width: scaledWidth, height: scaledHeight)
+                        contentView.addSubview(imageIcon)
+
+                        password.rightView = contentView
+                        password.rightViewMode = .always
+                        password.isSecureTextEntry = true
+                        
+                        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+                        imageIcon.isUserInteractionEnabled = true
+                        imageIcon.addGestureRecognizer(tapGestureRecognizer)
         
         let myView = UIView()
         myView.backgroundColor = UIColor.darkGreen
@@ -50,6 +73,18 @@ class LoginVC: UIViewController {
         
         LoginBtn.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
     }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        if let tappedImageView = tapGestureRecognizer.view as? UIImageView {
+            password.isSecureTextEntry.toggle()
+            tappedImageView.image = password.isSecureTextEntry ? UIImage(named: "closedeye") : UIImage(named: "openeye")
+        }
+    }
+    
+    
+    
+    
+    
     
     @objc func  loginButtonTapped(_ sender: UIButton) {
         validateFields()
