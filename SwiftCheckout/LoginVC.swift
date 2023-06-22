@@ -109,7 +109,7 @@ class LoginVC: UIViewController {
         // Perform login logic
         // ...
         // Show success modal
-        showSuccessModal()
+        //showSuccessModal()
     }
     
     func showSuccessModal() {
@@ -118,7 +118,7 @@ class LoginVC: UIViewController {
             self.present(successModalVC, animated: true, completion: nil)
         }
     
-    @IBAction func linkClick(_ sender: Any) {
+    @IBAction func btnLoginIn(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewAllVC") as! ViewAllVC
         
         self.navigationController?.pushViewController(vc, animated: true)
@@ -135,5 +135,6 @@ class LoginVC: UIViewController {
                       }
                   }
     }
+
 }
 

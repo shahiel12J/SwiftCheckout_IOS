@@ -128,19 +128,6 @@ class DetailsVC: UIViewController {
         }
 
     }
-    func showAlert2() {
-        let alertController = UIAlertController(title: "Item In Cart", message: "Item already in cart. Try changing the quantity", preferredStyle: .alert)
-        
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-        }
-        
-        alertController.addAction(okAction)
-        
-        // Present the alert
-        if let rootViewController = UIApplication.shared.keyWindow?.rootViewController {
-            rootViewController.present(alertController, animated: true, completion: nil)
-        }
-    }
     
     func showAlert() {
         let alertController = UIAlertController(title: "Updated", message: "Quantity updated", preferredStyle: .alert)
