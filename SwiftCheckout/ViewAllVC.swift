@@ -9,6 +9,7 @@ import UIKit
 
 class ViewAllVC: UIViewController {
 
+    @IBOutlet weak var cartClick: UIButton!
     @IBOutlet weak var tabBar: UIView!
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var itemView: UIView!
@@ -22,6 +23,7 @@ class ViewAllVC: UIViewController {
     
     var searchImages: ProductViewModel!
     var searchName: ProductViewModel!
+    var cartArray: [[String]] = (UserDefaults.standard.array(forKey: "cart") as? [[String]] ?? [["default"]])
     //var checkLogged: Bool = (UserDefaults.standard.bool(forKey: "LoggedIn"))
     
     var count = 0
@@ -30,6 +32,11 @@ class ViewAllVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        if (cartArray == [["default"]]){
+//            cartClick.isEnabled = false
+//        }else{
+//            cartClick.isEnabled = true
+//        }
         //var myInstance = cartViewModel(cart: [])
         //myInstance.cartArray()
 //        let appDomain = Bundle.main.bundleIdentifier!
@@ -188,7 +195,7 @@ extension ViewAllVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
        
         cell.textLabel.text = proVM.name
         cell.imageView.image = UIImage(named: String(proVM.image.imageURL))
-
+        cell.priceLabel.text = "R" + String(proVM.price)
         return cell
     }
 

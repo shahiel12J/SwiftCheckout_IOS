@@ -23,7 +23,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UserDefaults.standard.set(IsLoggedIn, forKey: "isLogged")
         imageIcon.image = UIImage(named: "closedeye")
                         let contentView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 24))
                         let imageViewWidth = imageIcon.image?.size.width ?? 0
@@ -179,6 +179,9 @@ class LoginVC: UIViewController {
     
     @IBAction func btnLoginIn(_ sender: Any) {
         login(withEmail: userName.text ?? "default", password: password.text ?? "default" )
+        IsLoggedIn = true
+        UserDefaults.standard.set(IsLoggedIn, forKey: "isLogged")
+        
     }
 
 }
