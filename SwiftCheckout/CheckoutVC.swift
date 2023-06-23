@@ -17,6 +17,7 @@ class CheckoutVC: UIViewController {
     var cThank = "Thanks for your order!"
     var cOrder = "Order is being prepared"
     var cImage = #imageLiteral(resourceName: "checkoutCart")
+    var IsLoggedIn = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,10 @@ class CheckoutVC: UIViewController {
     }
     
     @IBAction func btnCheckout(_ sender: Any) {
-        
+        let appDomain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: appDomain)
+        UserDefaults.standard.synchronize()
+        IsLoggedIn = true
+        UserDefaults.standard.set(IsLoggedIn, forKey: "isLogged")
     }
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class CartVC: UIViewController {
 
+    @IBOutlet weak var checkout: UIButton!
     @IBOutlet weak var totalPrice: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     var cartArray: [[String]] = (UserDefaults.standard.array(forKey: "cart") as? [[String]] ?? [["default"]])
@@ -22,10 +23,21 @@ class CartVC: UIViewController {
         super.viewDidLoad()
         //navigationItem.leftBarButtonItem = editButtonItem
         numItems = cartArray.count
+        checkout.isEnabled = false
+        collectionView.reloadData()
     }
     
     @IBAction func btnCheckout(_ sender: UIButton) {
-        performSegue(withIdentifier: "checkout", sender: nil)
+        print((UserDefaults.standard.bool(forKey: "isLogged")))
+        if((UserDefaults.standard.bool(forKey: "isLogged")) == false){
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "CheckoutVC") as! CheckoutVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
     }
 
 }
@@ -55,7 +67,7 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CartViewCell else {return UICollectionViewCell()}
-        
+        print(numItems)
         if (cartArray == [["default"]]){
             price = 0
             quantity = 0
@@ -66,7 +78,20 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             cell.removeBtn.isHidden = true
             cell.increaseBtn.isHidden = true
             cell.decreaseBtn.isHidden = true
-            //cell.cartCell.isHidden = true
+            totalPrice.isHidden = true
+            checkout.isHidden = true
+        }else if(numItems == 0){
+            price = 0
+            quantity = 0
+            cell.proImage.isHidden = true
+            cell.proName.text = "Cart is empty"
+            cell.proQuan.isHidden = true
+            cell.proPrice.text = ""
+            cell.removeBtn.isHidden = true
+            cell.increaseBtn.isHidden = true
+            cell.decreaseBtn.isHidden = true
+            totalPrice.isHidden = true
+            checkout.isHidden = true
         }else{
             print(p)
             price = (Int(cartArray[indexPath.item][3]) ?? 0) * (Int(cartArray[indexPath.row][2]) ?? 0)
@@ -87,6 +112,7 @@ extension CartVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             cell.proQuan.text = String(quantity)
             cell.delegate = self
             cell.proPrice.text = "R" + String(price)
+            checkout.isEnabled = true
         }
         return cell
     }
@@ -106,6 +132,12 @@ extension CartVC: CartViewCellDelegate{
             totalPrice.text = String(0)
             collectionView.reloadData()
             p = []
+//            if (numItems == 1){
+//                numItems = 0
+//                cartArray.remove(at: indexPath.item)
+//                totalPrice.text = String(0)
+//                collectionView.reloadData()
+//            }
         }
         UserDefaults.standard.set(cartArray, forKey: "cart")
         cartArray = (UserDefaults.standard.array(forKey: "cart") as? [[String]])!
