@@ -259,6 +259,24 @@ class SignUpVC: UIViewController {
                     //go to home screen
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
+                guard let currentUser = firebaseResult?.user else{
+                                    return
+                                }
+                                
+                                let changeRequest = currentUser.createProfileChangeRequest()
+                                changeRequest.displayName = self.userName1.text // Set the display name
+                                changeRequest.commitChanges { error in
+                                          if let error = error {
+                                              // Handle error
+                                              print("Error setting display name: \(error.localizedDescription)")
+                                          } else {
+                                              // Display name set successfully
+                                              //print("Display name set: \(userName1.text)")
+                                              
+                                              // Update the name label in your ProfileVC
+                                             // self.nameLabel.text = userName1.text
+                                          }
+                                      }
             }
         }
     }
