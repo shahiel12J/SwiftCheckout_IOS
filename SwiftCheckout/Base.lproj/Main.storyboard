@@ -1151,10 +1151,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Fxv-DW-WZ4"/>
                     <connections>
-                        <outlet property="emailLabel" destination="f3b-tz-dNL" id="tq8-5t-Kds"/>
+                        <outlet property="emailLabel" destination="f3b-tz-dNL" id="COS-ow-rDf"/>
                         <outlet property="loginBtn" destination="qFC-uq-8Ni" id="83h-hT-6Az"/>
                         <outlet property="logoutBtn" destination="0j6-Yf-DcE" id="OOJ-Bs-jW8"/>
-                        <outlet property="nameLabel" destination="B8C-bf-ZdW" id="kqe-7X-1BT"/>
+                        <outlet property="nameLabel" destination="B8C-bf-ZdW" id="S6P-t0-Azd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kca-1O-I5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

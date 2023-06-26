@@ -11,8 +11,10 @@ import Firebase
 
 class ProfileVC: UIViewController {
     
-    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var logoutBtn: UIButton!
     var IsLoggedIn = (UserDefaults.standard.bool(forKey: "isLogged"))
@@ -20,6 +22,23 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         logoutBtn.isHidden = false
         if ((UserDefaults.standard.bool(forKey: "isLogged")) == true){
+            
+            
+            if let currentUser = Auth.auth().currentUser{
+                let displayName = currentUser.displayName
+                let email = currentUser.email
+                
+                nameLabel.text = displayName
+                emailLabel?.text = email
+                
+                nameLabel.text = displayName
+                emailLabel?.text = email
+                
+                print("User Display Name: \(displayName ?? "")")
+                print("User email: \(email ?? "")")
+            }
+                
+                
             //            IsLoggedIn = false
             //            UserDefaults.standard.set(IsLoggedIn, forKey: "isLogged")
             logoutBtn.isHidden = false
@@ -34,20 +53,6 @@ class ProfileVC: UIViewController {
     
     @IBAction func logoutClick(_ sender: Any) {
         if ((UserDefaults.standard.bool(forKey: "isLogged")) == true){
-            
-            if let currentUser = Auth.auth().currentUser{
-                
-                let displayName = currentUser.displayName
-                let email = currentUser.email
-                
-                nameLabel?.text = displayName
-                emailLabel?.text = email
-                
-                
-                
-                print("User Display Name: \(displayName ?? "")")
-                print("User email: \(email ?? "")")
-                
                 IsLoggedIn = false
                 UserDefaults.standard.set(IsLoggedIn, forKey: "isLogged")
                 logoutBtn.isHidden = false
@@ -72,4 +77,4 @@ class ProfileVC: UIViewController {
          */
         
     }
-}
+
