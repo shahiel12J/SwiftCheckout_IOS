@@ -27,6 +27,8 @@ class CartVC: UIViewController {
         collectionView.reloadData()
     }
     
+
+    
     @IBAction func btnCheckout(_ sender: UIButton) {
         print((UserDefaults.standard.bool(forKey: "isLogged")))
         if((UserDefaults.standard.bool(forKey: "isLogged")) == false){
