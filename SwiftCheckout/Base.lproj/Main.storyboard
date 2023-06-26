@@ -1151,8 +1151,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Fxv-DW-WZ4"/>
                     <connections>
+                        <outlet property="emailLabel" destination="f3b-tz-dNL" id="tq8-5t-Kds"/>
                         <outlet property="loginBtn" destination="qFC-uq-8Ni" id="83h-hT-6Az"/>
                         <outlet property="logoutBtn" destination="0j6-Yf-DcE" id="OOJ-Bs-jW8"/>
+                        <outlet property="nameLabel" destination="B8C-bf-ZdW" id="kqe-7X-1BT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kca-1O-I5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1206,7 +1208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rr5-SC-Cdw">
-                                <rect key="frame" x="16" y="140" width="361" height="320"/>
+                                <rect key="frame" x="16" y="84" width="361" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="8xb-P2-PdA"/>
                                 </constraints>
@@ -1574,7 +1576,7 @@
         <segue reference="4Ja-zZ-uck"/>
         <segue reference="J3U-gM-gM2"/>
         <segue reference="W1M-Gk-p22"/>
-        <segue reference="AME-Xr-fmK"/>
+        <segue reference="CGh-7D-Vd0"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
