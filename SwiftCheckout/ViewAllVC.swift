@@ -80,9 +80,11 @@ class ViewAllVC: UIViewController {
             
         }
     }
+    
     @IBAction func all() {
         setup()
     }
+    
     @IBAction func bevFilter() {
         guard let url = URL(string: "http://localhost:8081/api/products/search?categoryName=Beveragers") else {
             return
