@@ -52,7 +52,7 @@ class DetailsVC: UIViewController {
     }
     
     private func navConfig(){
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+       self.navigationItem.rightBarButtonItem = UIBarButtonItem(
                 image: UIImage(systemName: "cart.fill"),
                 style: .done,
                 target: self,
@@ -90,10 +90,15 @@ class DetailsVC: UIViewController {
     
     @IBAction func btnAddToCart(_ sender: Any) {
         
-        count = UserDefaults.standard.integer(forKey: "cartCount") + 1
-        //countLabel.text = String(count)
-        UserDefaults.standard.set(count, forKey: "cartCount")
-        countLabel.text = String((UserDefaults.standard.array(forKey: "cart") as? [[String]])?.count ?? 0)
+//        let tempCount = (UserDefaults.standard.array(forKey: "cart") as? [[String]])?.count ?? 0
+//
+//        if (tempCount == 0){
+//            count = 1
+//        }else{
+//            count = UserDefaults.standard.integer(forKey: "cartCount") + 1
+//        }
+//        //countLabel.text = String(count)
+//        UserDefaults.standard.set(count, forKey: "cartCount")
         
         
         iconShake = CABasicAnimation(keyPath: "transform.rotation.z")
@@ -116,6 +121,7 @@ class DetailsVC: UIViewController {
                         cartArray[rowIndex][2] = String(quantity)
                         UserDefaults.standard.set(cartArray, forKey: "cart")
                         nameCheck = true
+                        print(columnIndex)
                     
                 }
             }
@@ -124,8 +130,15 @@ class DetailsVC: UIViewController {
         if (nameCheck == false){
             myInstance.addToCart(imageURl: pImage, name: pName, quantity: quantity, price: pPrice)
         }else{
-            print("go away")
+            print("Product name does not match")
         }
+        
+        if ((UserDefaults.standard.array(forKey: "cart") as? [[String]])?.count ?? 0 == 0){
+            countLabel.text = "1"
+        }else{
+            countLabel.text = String((UserDefaults.standard.array(forKey: "cart") as? [[String]])?.count ?? 0)
+        }
+        
 
     }
     
