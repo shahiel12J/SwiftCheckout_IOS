@@ -35,11 +35,9 @@ class CartVC: UIViewController {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "CheckoutVC") as! CheckoutVC
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "OrderSummaryVC") as! OrderSummaryVC
             self.navigationController?.pushViewController(vc, animated: true)
         }
-        
-        
     }
 
 }
