@@ -26,7 +26,7 @@ class OrderSummaryVC: UIViewController {
     var oAddress = "The Media Mill, 7 Quince St, Auckland Park, Johannesburg, 2000"
     var oTime = "Time"
     var totLbl = "Total:"
-    var amountLbl = "R678"
+    var amountLbl = ""
     var oImage = #imageLiteral(resourceName: "grocer")
     
     override func viewDidLoad() {
@@ -41,6 +41,7 @@ class OrderSummaryVC: UIViewController {
         
         let formattedDate = dateFormatter.string(from: currentDate)
         if ((UserDefaults.standard.bool(forKey: "isLogged")) == true){
+            
             if let currentUser = Auth.auth().currentUser{
                 
                 let displayName = currentUser.displayName
@@ -49,7 +50,7 @@ class OrderSummaryVC: UIViewController {
                 
                 print("User Display Name: (displayName ?? ",")")
                 
-                orderSummLbl.text = orderLbl
+                //orderSummLbl.text = orderLbl
                 pickup.text = opickup
                 time.text = oTime
                 collectionTime.text = formattedDate

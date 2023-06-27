@@ -60,11 +60,12 @@ class ProfileVC: UIViewController {
             }else{
                 logoutBtn.isHidden = true
                 loginBtn.isHidden = false
+                let appDomain = Bundle.main.bundleIdentifier!
+                UserDefaults.standard.removePersistentDomain(forName: appDomain)
+                UserDefaults.standard.synchronize()
             }
             
-            let appDomain = Bundle.main.bundleIdentifier!
-            UserDefaults.standard.removePersistentDomain(forName: appDomain)
-            UserDefaults.standard.synchronize()
+            
         }
         /*
          // MARK: - Navigation

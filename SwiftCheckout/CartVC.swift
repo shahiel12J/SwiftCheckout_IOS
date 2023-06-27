@@ -36,6 +36,9 @@ class CartVC: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "OrderSummaryVC") as! OrderSummaryVC
+            
+            vc.amountLbl = totalPrice.text ?? "0"
+            
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
